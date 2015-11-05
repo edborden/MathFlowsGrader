@@ -1,0 +1,3 @@
+if stack
+  each model as |card|
+    card-object model=card stack=stack
