@@ -18,10 +18,6 @@ CardStackComponent = Ember.Component.extend
   options: Ember.computed ->
 
     throwOutConfidence: (offset, element) ->
-        console.log offset,element.offsetWidth,Math.min(Math.abs(offset*4) / element.offsetWidth, 1)
-        Math.min(Math.abs(offset) / element.offsetWidth, 1)
-
-    isThrowOut: (params) ->
-      Math.abs(params) > 50
+        Math.min(Math.abs(offset*2) / element.offsetWidth, 1)
 
 `export default CardStackComponent`
