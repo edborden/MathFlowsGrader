@@ -10,9 +10,6 @@ CardObjectComponent = Ember.Component.extend
 
   classNames: ['card-object']
   tagName: 'li'
-  attributeBindings: ["style"]
-
-  style: Ember.computed -> "background-color:#{@get('model').color}".htmlSafe()
 
   didInsertElement: -> 
     scheduleOnce 'afterRender', @, 'setup'
