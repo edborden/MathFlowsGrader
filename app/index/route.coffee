@@ -3,10 +3,10 @@
 IndexRoute = Ember.Route.extend
 
   model: -> [
-    {content:'♣'},
-    {content:'♦'},
-    {content:'♥'},
-    {content:'♠'}
+    {content:'♣',color:"orange"},
+    {content:'♦',color:"red"},
+    {content:'♥',color:"yellow"},
+    {content:'♠',color:"green"}
   ]
 
 `export default IndexRoute`
