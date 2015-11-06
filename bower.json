@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "bootstrap": "*",
-    "swing":"*"
+    "swing":"*",
+    "signature_pad":"*"
   }
 }

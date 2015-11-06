@@ -21,4 +21,10 @@ CardObjectComponent = Ember.Component.extend
       console.log 'destroy'
       @destroy()
 
+  willDestroyElement: ->
+    @destroyCard()
+
+  destroyCard: ->
+    @get('card').destroy()
+
 `export default CardObjectComponent`

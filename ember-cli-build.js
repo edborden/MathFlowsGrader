@@ -9,5 +9,8 @@ module.exports = function(defaults) {
   // Swing
   app.import('bower_components/swing/dist/browser/swing.js');
 
+  // Drawing
+  app.import('bower_components/signature_pad/signature_pad.js');
+
   return app.toTree();
 };

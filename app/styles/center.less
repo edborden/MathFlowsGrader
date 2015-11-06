@@ -1,0 +1,22 @@
+.centered(@dim) {
+  top: 50%;
+  margin-top: @dim * -0.5;
+  .h-centered(@dim);
+}
+.centered {.centered(@circle-width);}
+
+.h-centered(@dim) {
+  left: 50%;
+  margin-left: @dim * -0.5;
+  .stacked;
+}
+.h-centered {.h-centered(@circle-width);}
+
+.stacked {z-index:2;position:absolute;}
+
+.self-center {
+  top:50%;
+  position:absolute;
+  left:50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}

@@ -1,3 +1,5 @@
+`import Ember from 'ember'`
+
 CardImageComponent = Ember.Component.extend
 
   classNames: ['card-image']

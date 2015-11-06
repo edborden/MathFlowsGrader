@@ -1,0 +1,15 @@
+@circle-width: 15vw;
+@scircle-width: 10vw;
+
+.circle(@dim,@color) {
+  height: @dim;
+  width: @dim;
+  border: 1px solid @color;
+  border-radius: 50%;
+  background-color: white;
+  .text-center;
+  color:black;
+}
+.circle {.circle(@circle-width,black);}
+
+.scircle {.circle(@scircle-width,black);}

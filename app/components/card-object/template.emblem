@@ -1,1 +1,4 @@
 card-image model=model
+if takingNotes
+  notes-canvas
+notes-button
