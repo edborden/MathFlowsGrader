@@ -25,6 +25,8 @@ NotesCanvasComponent = Ember.Component.extend
     penColor: "rgb(255,000,000)"
     minWidth: 2.5
     maxWidth: 5
+    onEnd: ->
+      $('html, body').scrollTop(1)
 
   resizeCanvas: ->
     canvas = @get 'element'

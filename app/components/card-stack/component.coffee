@@ -16,8 +16,7 @@ CardStackComponent = Ember.Component.extend
     @set 'stack', gajus.Swing.Stack(@get 'options')
 
   options: Ember.computed ->
-
     throwOutConfidence: (offset, element) ->
-        Math.min(Math.abs(offset*2) / element.offsetWidth, 1)
+      Math.min(Math.abs(offset*2) / element.offsetWidth, 1)
 
 `export default CardStackComponent`

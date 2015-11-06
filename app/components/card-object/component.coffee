@@ -41,5 +41,4 @@ CardObjectComponent = Ember.Component.extend
     setNotes: (notes) ->
       @set 'notes', notes
 
-
 `export default CardObjectComponent`
