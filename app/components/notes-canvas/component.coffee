@@ -4,6 +4,8 @@ scheduleOnce = Ember.run.scheduleOnce
 NotesCanvasComponent = Ember.Component.extend
 
   tagName: 'canvas'
+  pad: null
+  notes: null
 
   didInsertElement: -> 
     scheduleOnce 'afterRender', @, 'setup'
@@ -17,7 +19,7 @@ NotesCanvasComponent = Ember.Component.extend
     jqEl.width parentWidth
     jqEl.height parentHeight
     @resizeCanvas()
-    new SignaturePad element, @get 'options'
+    @set 'pad', new SignaturePad element, @get 'options'
 
   options: Ember.computed ->
     penColor: "rgb(255,000,000)"
@@ -30,5 +32,14 @@ NotesCanvasComponent = Ember.Component.extend
     canvas.width = canvas.offsetWidth * ratio
     canvas.height = canvas.offsetHeight * ratio
     canvas.getContext("2d").scale(ratio, ratio)
+
+  willDestroyElement: ->
+    console.log 'willDestroyElement NotesCanvasComponent'
+    @exportImage()
+
+  exportImage: ->
+    image = @get('pad').toDataURL()
+    console.log image
+    @set 'notes', image
 
 `export default NotesCanvasComponent`

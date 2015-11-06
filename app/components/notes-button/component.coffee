@@ -2,6 +2,9 @@
 
 NotesButtonComponent = Ember.Component.extend
 
-  classNames: ['scircle']
+  classNames: ['scircle','click-fix']
+
+  click: ->
+    @toggleTakingNotes()
 
 `export default NotesButtonComponent`

@@ -1,4 +1,7 @@
 card-image model=model
 if takingNotes
-  notes-canvas
-notes-button
+  notes-canvas notes=notes
+else
+  if notes
+    notes-data src=notes
+notes-button toggleTakingNotes=(action 'toggleTakingNotes')

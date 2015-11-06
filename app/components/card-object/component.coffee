@@ -7,6 +7,8 @@ CardObjectComponent = Ember.Component.extend
   stack: null
   card: null
   model: null
+  takingNotes: false
+  notes: null
 
   classNames: ['card-object']
   tagName: 'li'
@@ -26,5 +28,9 @@ CardObjectComponent = Ember.Component.extend
 
   destroyCard: ->
     @get('card').destroy()
+
+  actions:
+    toggleTakingNotes: ->
+      @toggleProperty 'takingNotes'
 
 `export default CardObjectComponent`
