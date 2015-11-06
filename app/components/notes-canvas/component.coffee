@@ -5,7 +5,6 @@ NotesCanvasComponent = Ember.Component.extend
 
   tagName: 'canvas'
   pad: null
-  notes: null
 
   didInsertElement: -> 
     scheduleOnce 'afterRender', @, 'setup'
@@ -26,7 +25,8 @@ NotesCanvasComponent = Ember.Component.extend
     minWidth: 2.5
     maxWidth: 5
     onEnd: ->
-      $('html, body').scrollTop(1)
+      console.log "onEnd"
+      window.scrollTo(0,0)
 
   resizeCanvas: ->
     canvas = @get 'element'
