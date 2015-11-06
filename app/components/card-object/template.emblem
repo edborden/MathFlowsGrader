@@ -1,6 +1,6 @@
-card-image model=model
+card-image src=model.src
 if takingNotes
-  notes-canvas notes=notes
+  notes-canvas notes=notes setNotes=(action 'setNotes')
 else
   if notes
     notes-data src=notes

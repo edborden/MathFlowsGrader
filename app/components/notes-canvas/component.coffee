@@ -38,6 +38,6 @@ NotesCanvasComponent = Ember.Component.extend
 
   exportImage: ->
     image = @get('pad').toDataURL()
-    @set 'notes', image
+    @setNotes image
 
 `export default NotesCanvasComponent`
