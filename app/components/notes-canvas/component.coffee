@@ -34,12 +34,10 @@ NotesCanvasComponent = Ember.Component.extend
     canvas.getContext("2d").scale(ratio, ratio)
 
   willDestroyElement: ->
-    console.log 'willDestroyElement NotesCanvasComponent'
     @exportImage()
 
   exportImage: ->
     image = @get('pad').toDataURL()
-    console.log image
     @set 'notes', image
 
 `export default NotesCanvasComponent`

@@ -6,7 +6,4 @@ NotesDataComponent = Ember.Component.extend
   tagName: 'img'
   attributeBindings: ['src']
 
-  didInsertElement: ->
-    console.log @get 'src'
-
 `export default NotesDataComponent`

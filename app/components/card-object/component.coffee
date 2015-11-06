@@ -5,10 +5,10 @@ scheduleOnce = Ember.run.scheduleOnce
 CardObjectComponent = Ember.Component.extend
 
   stack: null
-  card: null
   model: null
   takingNotes: false
   notes: null
+  cardHolder: null
 
   classNames: ['card-object']
   tagName: 'li'
@@ -18,19 +18,25 @@ CardObjectComponent = Ember.Component.extend
 
   setup: ->
     card = @get('stack').createCard @get 'element'
-    @set 'card', card
+    @set 'cardHolder', card
     card.on 'throwout', => 
-      console.log 'destroy'
       @destroy()
+    return card
 
   willDestroyElement: ->
     @destroyCard()
 
   destroyCard: ->
-    @get('card').destroy()
+    @get('cardHolder').destroy()
 
   actions:
     toggleTakingNotes: ->
       @toggleProperty 'takingNotes'
+
+  card: Ember.computed 'takingNotes', ->
+    unless @get 'takingNotes'
+      @setup()
+    else
+      @destroyCard()
 
 `export default CardObjectComponent`
