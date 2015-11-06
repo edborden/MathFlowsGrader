@@ -9,6 +9,9 @@ CardObjectComponent = Ember.Component.extend
   takingNotes: false
   notes: null
   card: null
+  dragging: null
+  dragDirection: null
+  dragConfidence: null
 
   classNames: ['card-object']
   tagName: 'li'
@@ -22,6 +25,16 @@ CardObjectComponent = Ember.Component.extend
     @set 'card', card
     card.on 'throwout', => 
       @destroy()
+    card.on 'dragstart', =>
+      @set 'dragging', true
+    card.on 'dragmove', (eventObject) =>
+      dragDirection = if eventObject.throwDirection is 1 then "correct" else "wrong"
+      @set 'dragDirection', dragDirection
+      @set 'dragConfidence', eventObject.throwOutConfidence
+    card.on 'dragend', =>
+      @set 'dragDirect', null
+      @set 'dragging', false
+      @set 'dragConfidence', null
 
   willDestroyElement: ->
     @destroyCard()

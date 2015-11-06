@@ -4,4 +4,6 @@ if takingNotes
 else
   if notes
     notes-data src=notes
+  if dragging
+    card-drag dragDirection=dragDirection dragConfidence=dragConfidence
 notes-button toggleTakingNotes=(action 'toggleTakingNotes')
