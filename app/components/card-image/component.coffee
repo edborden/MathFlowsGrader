@@ -8,6 +8,6 @@ CardImageComponent = Ember.Component.extend
 
   style: Ember.computed ->
     src = @get 'src'
-    "background-image:url('https://res.cloudinary.com/hmb9zxcjb/image/upload/#{src}')".htmlSafe()
+    "background-image:url(#{src})".htmlSafe()
 
 `export default CardImageComponent`
