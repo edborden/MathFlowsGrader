@@ -22,8 +22,8 @@ NotesCanvasComponent = Ember.Component.extend
 
   options: Ember.computed ->
     penColor: "rgb(255,000,000)"
-    minWidth: 2.5
-    maxWidth: 5
+    minWidth: 1.5
+    maxWidth: 3
     onEnd: ->
       console.log "onEnd"
       window.scrollTo(0,0)
